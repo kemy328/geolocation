@@ -13,20 +13,20 @@ The primary mission within the team is to set the source code analysis for this 
 
 ## Setting up sops in order to encrypt and decrypt secret files:
 
-    1. Download sops using the following command:
+   1.   Download sops using the following command:
 
         ```bash
         brew install sops
         ```
-    2. setting sops in development environment:
+   2.   setting sops in development environment:
 
         SOPS encrypt and decrypt files using various key sources (GPG, AWS KMS, GCP KMS, …). For structured data, such as YAML, JSON, INI and ENV files, it will encrypt values, but not mapping keys. For YAML files, it also encrypts comments.
+        
+        ###  Setting sops with gpg:
 
-        ### Setting sops with gpg:
+           - if you don't already have a gpg key, follow this link to create one https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/
 
-            - if you don't already have a gpg key, follow this link to create one https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/
-
-            - create a .sops.yaml file (see example below)
+           - create a .sops.yaml file (see example below)
 
             ```bash
                 ---
@@ -37,7 +37,7 @@ The primary mission within the team is to set the source code analysis for this 
                       encrypted_regex: '^(data|stringData)$'
             ```
 
-        ### setting up sops with kms
+          ###  setting up sops with kms
 
             - create a .sops.yaml file:
 
