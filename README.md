@@ -26,12 +26,12 @@ The primary mission within the team is to set the source code analysis for this 
 
            - if you don't already have a gpg key, follow this link to create one https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/
 
-           - create a .sops.yaml file (see example below)
+           - create a .sops.yaml file
 
-            ```bash
-                ---
+             ```
+             ---
                 creation_rules:
-                    - path_regex: path/to/existing/ # The path_regex checks the path of the encrypting file relative to the .sops.yaml config file. So basically matching the path starting from the `.sops.yaml` it belongs to. 
+                    - path_regex: path/to/existing/            ###COMMENT: The path_regex checks the path of the encrypting file relative to the .sops.yaml config file. So basically matching the path starting from the `.sops.yaml` it belongs to. 
 
                       pgp: 'F4C60A55C2D8020CE371FF49AE3E43AE1A92015C' # (this is the key id)
                       encrypted_regex: '^(data|stringData)$'
@@ -39,12 +39,12 @@ The primary mission within the team is to set the source code analysis for this 
 
           ###  setting up sops with kms
 
-            - create a .sops.yaml file:
+           - create a .sops.yaml file:
 
             ```bash
                 ---
                 creation_rules:
-                    - path_regex: path/to/existing/ # The path_regex checks the path of the encrypting file relative to the .sops.yaml config file. So basically matching the path starting from the `.sops.yaml` it belongs to.
+                    - path_regex: path/to/existing/            ###COMMENT: The path_regex checks the path of the encrypting file relative to the .sops.yaml config file. So basically matching the path starting from the `.sops.yaml` it belongs to.
 
                     kms: 'arn:aws-us-gov:kms:us-gov-west-1:235856440647:key/224a54fc-8440-414d-b73c-364522dd8d96'
                     encrypted_regex: '^(data|stringData)$'
