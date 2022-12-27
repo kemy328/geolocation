@@ -56,13 +56,13 @@ We use the key described in a `.sops.yaml` file to encrypt and decrypt a file. W
 
 The following commands are used to encrypt and decrypt a file after a creating a sops.yaml file:
 
-    Encrypting a file:
+   Encrypting a file:
 
         ```bash
         sops -e -i <filename>
         ```
 
-    decrypting a file
+   Decrypting a file
         ```bash
         sops -i -d <filename>
         ```
