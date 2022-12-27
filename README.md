@@ -31,10 +31,10 @@ The primary mission within the team is to set the source code analysis for this 
            ```
            ---
            creation_rules:
-           - path_regex: path/to/existing/            ###COMMENT: The path_regex checks the path of the encrypting file relative to the .sops.yaml config file. So basically matching the path starting from the `.sops.yaml` it belongs to. 
+               - path_regex: path/to/existing/            ###COMMENT: The path_regex checks the path of the encrypting file relative to the .sops.yaml config file. So basically matching the path starting from the `.sops.yaml` it belongs to. 
 
-                      pgp: 'F4C60A55C2D8020CE371FF49AE3E43AE1A92015C' # (this is the key id)
-                      encrypted_regex: '^(data|stringData)$'
+                 pgp: 'F4C60A55C2D8020CE371FF49AE3E43AE1A92015C' # (this is the key id)
+                 encrypted_regex: '^(data|stringData)$'
            ```
 
          ###  setting up sops with kms
