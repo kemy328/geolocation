@@ -41,14 +41,14 @@ The primary mission within the team is to set the source code analysis for this 
 
            - create a .sops.yaml file:
 
-            ```
-            ---
+           ```
+           ---
             creation_rules:
             - path_regex: path/to/existing/            ###COMMENT: The path_regex checks the path of the encrypting file relative to the .sops.yaml config file. So basically matching the path starting from the `.sops.yaml` it belongs to.
 
                     kms: 'arn:aws-us-gov:kms:us-gov-west-1:235856440647:key/224a54fc-8440-414d-b73c-364522dd8d96'
                     encrypted_regex: '^(data|stringData)$'
-            ```
+           ```
 
 ## Encrypt and Decrypt a file 
 
