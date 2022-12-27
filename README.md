@@ -27,24 +27,24 @@ The primary mission within the team is to set the source code analysis for this 
            - if you don't already have a gpg key, follow this link to create one https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/
 
            - create a .sops.yaml file
-
-             ```
-             ---
-                creation_rules:
-                    - path_regex: path/to/existing/            ###COMMENT: The path_regex checks the path of the encrypting file relative to the .sops.yaml config file. So basically matching the path starting from the `.sops.yaml` it belongs to. 
+           
+           ```
+           ---
+           creation_rules:
+           - path_regex: path/to/existing/            ###COMMENT: The path_regex checks the path of the encrypting file relative to the .sops.yaml config file. So basically matching the path starting from the `.sops.yaml` it belongs to. 
 
                       pgp: 'F4C60A55C2D8020CE371FF49AE3E43AE1A92015C' # (this is the key id)
                       encrypted_regex: '^(data|stringData)$'
-            ```
+           ```
 
-          ###  setting up sops with kms
+         ###  setting up sops with kms
 
            - create a .sops.yaml file:
 
-            ```bash
-                ---
-                creation_rules:
-                    - path_regex: path/to/existing/            ###COMMENT: The path_regex checks the path of the encrypting file relative to the .sops.yaml config file. So basically matching the path starting from the `.sops.yaml` it belongs to.
+            ```
+            ---
+            creation_rules:
+            - path_regex: path/to/existing/            ###COMMENT: The path_regex checks the path of the encrypting file relative to the .sops.yaml config file. So basically matching the path starting from the `.sops.yaml` it belongs to.
 
                     kms: 'arn:aws-us-gov:kms:us-gov-west-1:235856440647:key/224a54fc-8440-414d-b73c-364522dd8d96'
                     encrypted_regex: '^(data|stringData)$'
@@ -58,11 +58,11 @@ The following commands are used to encrypt and decrypt a file after a creating a
 
    Encrypting a file:
 
-        ```bash
+        ```
         sops -e -i <filename>
         ```
 
    Decrypting a file
-        ```bash
+        ```
         sops -i -d <filename>
         ```
