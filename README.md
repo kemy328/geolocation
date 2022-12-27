@@ -58,12 +58,12 @@ The following commands are used to encrypt and decrypt a file after a creating a
 
    Encrypting a file:
 
-           ```
-            sops -e -i <filename>
-           ```
+        ```bash
+        sops -e -i <filename>
+        ```
 
    Decrypting a file
    
-           ```
-            sops -i -d <filename>
-           ```
+        ```bash
+        sops -i -d <filename>
+        ```
